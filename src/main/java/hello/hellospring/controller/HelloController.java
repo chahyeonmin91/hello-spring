@@ -8,12 +8,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloController {
+    //static
     @GetMapping("hello")
     public String hello(Model model) {
         model.addAttribute("data", "mcha");
         return "hello";
     }
 
+    //mvc
     @GetMapping("hello-mvc")
     public String helloMvc(@RequestParam("name") String name, Model model) {
         model.addAttribute("name", name);
@@ -26,9 +28,14 @@ public class HelloController {
         return "hello" + name;
     }
 
+    //api
     @GetMapping("hello-api")
     @ResponseBody
-    public Hello
+    public Hello helloApi(@RequestParam("name") String name) {
+        Hello hello = new Hello();
+        hello.setName(name);
+        return hello;
+    }
 
     static class Hello{
         private String name;
