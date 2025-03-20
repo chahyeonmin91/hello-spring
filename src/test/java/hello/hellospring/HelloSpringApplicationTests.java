@@ -1,9 +1,7 @@
 package hello.hellospring;
 
 import hello.hellospring.domain.Member;
-import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -61,7 +59,7 @@ class HelloSpringApplicationTests {
 		member3.setName("spring3");
 		repository.save(member3);
 
-		List<Member> result = repository.findall();
+		List<Member> result = repository.findAll();
 		assertThat(result.size()).isEqualTo(3);
 	}
 }
