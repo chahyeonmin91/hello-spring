@@ -37,6 +37,7 @@ public class MemberController {
     @GetMapping("/members")
     public String list(Model model) {
         List<Member> members = memberService.findMembers();
+        //컨트롤러에서 조회한 회원 목록 데이터를 뷰로 전달
         model.addAttribute("members", members);
         return "members/memberList";
     }
