@@ -15,12 +15,13 @@ import javax.sql.DataSource;
 
 @Configuration
 public class SpringConfig {
-    @Autowired
+
     private final MemberRepository memberRepository;
 
     public SpringConfig(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
+
 
     @Bean
     public MemberService memberService() {
@@ -34,9 +35,8 @@ public class SpringConfig {
 
 //    @Bean
 //    public MemberRepository memberRepository() {
-//      return new MemoryMemberRepository();
-//      return new JdbcTemplateMemberRepository(dataSource);
-//      return new JdbcTemplateMemberRepository(dataSource);
+//        return new MemoryMemberRepository();
+//        return new JdbcTemplateMemberRepository(dataSource);
 //        return new JpaMemberRepository(em);
 //    }
 }
